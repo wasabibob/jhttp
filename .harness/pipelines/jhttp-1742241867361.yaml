@@ -34,7 +34,19 @@ pipeline:
                     shell: Sh
                     command: |-
                       echo "Welcome to Harness CI"
-                      mvn -B package --file pom.xml
+                      mvn -B clean package --file pom.xml
+              - step:
+                  type: Run
+                  name: run test
+                  identifier: run_test
+                  spec:
+                    shell: Sh
+                    command: mvn test
+                    reports:
+                      type: JUnit
+                      spec:
+                        paths:
+                          - target/surefire-reports/*.xml
           platform:
             arch: Amd64
             os: Linux
