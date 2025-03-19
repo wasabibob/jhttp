@@ -53,7 +53,7 @@ pipeline:
                   identifier: Build_and_push_to_Docker
                   spec:
                     connectorRef: Harness_Docker_Connector
-                    repo: wasabibob/jhttpd
+                    repo: wasabibob/jhttp
                     tags:
                       - <+pipeline.sequenceId>
           platform:
