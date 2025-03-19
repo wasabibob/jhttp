@@ -113,7 +113,7 @@ pipeline:
                   identifier: primaryDeployment
                   steps:
                     - step:
-                        name: Rollout Deploy
+                        name: Rolling Deploy
                         identifier: Rollout_Deploy
                         template:
                           templateRef: Rolling_Deploy_Template
