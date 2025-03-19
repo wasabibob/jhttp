@@ -113,12 +113,11 @@ pipeline:
                   identifier: primaryDeployment
                   steps:
                     - step:
-                        name: Rolling Deployment
-                        identifier: rollingDeployment
-                        type: K8sRollingDeploy
-                        timeout: 10m
-                        spec:
-                          skipDryRun: false
+                        name: Rollout Deploy
+                        identifier: Rollout_Deploy
+                        template:
+                          templateRef: Rolling_Deploy_Template
+                          versionLabel: V1
             rollbackSteps:
               - step:
                   name: Canary Delete
